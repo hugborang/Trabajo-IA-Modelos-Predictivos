@@ -17,7 +17,7 @@ def robust_evaluation(model, X, y, N_Exp, CV, Scoring='balanced_accuracy'):
     scores = []
 
     for _ in range(N_Exp):
-        cv_results = cross_val_score(model, X, y, cv=CV, scoring=Scoring)
+        cv_results = cross_val_score(model, X, y, cv=CV, scoring=Scoring, n_jobs=-1)
         scores.extend(cv_results)
 
     return np.mean(scores)

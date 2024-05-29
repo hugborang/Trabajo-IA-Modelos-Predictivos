@@ -11,7 +11,7 @@ def backward_sequential_search(data, target_name, model, N_Exp=1, CV=3):
     :param data: pd.DataFrame, Conjunto de datos con N variables predictoras y una variable respuesta.
     :param target_name: str, Nombre de la variable respuesta.
     :param model: sklearn model, Instancia del modelo de entrenamiento a usar.
-    :param N_Exp: int, Número de repeticiones del experimento por validación cruzada (default 10).
+    :param N_Exp: int, Número de repeticiones del experimento por validación cruzada (default 5).
     :param CV: int, Número de pliegues (folds) a considerar en la validación cruzada (default 5).
     :param scoring: str or callable, Estrategia para evaluar el rendimiento del modelo (default 'balanced_accuracy').
     :return: pd.DataFrame, Tabla con las combinaciones obtenidas en cada iteración, su tamaño y su rendimiento.

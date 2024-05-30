@@ -55,4 +55,4 @@ def backward_sequential_search(data, target_name, model, N_EXP, cV):
 
 
     # Devolver los resultados en formato de DataFrame
-    return pd.DataFrame(results.reverse())
+    return pd.DataFrame(results)

@@ -2,7 +2,7 @@ import numpy as np
 
 from sklearn.model_selection import cross_val_score
 
-def robust_evaluation(model, X, y, N_Exp=1, CV=3, Scoring='balanced_accuracy'):
+def robust_evaluation(model, X, y, N_Exp, CV, Scoring='balanced_accuracy'):
 
     #print("Debugging: Columns of X:", X.columns)
     #print("DATAFRAME:", X)

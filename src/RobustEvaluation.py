@@ -2,7 +2,11 @@ import numpy as np
 
 from sklearn.model_selection import cross_val_score
 
-def robust_evaluation(model, X, y, N_Exp, CV, Scoring='balanced_accuracy'):
+def robust_evaluation(model, X, y, N_Exp=1, CV=3, Scoring='balanced_accuracy'):
+
+    #print("Debugging: Columns of X:", X.columns)
+    #print("DATAFRAME:", X)
+    #print("solution:", solution )
     """
     Evalúa un modelo utilizando validación cruzada repetida y devuelve la métrica de rendimiento promedio.
 
@@ -19,5 +23,6 @@ def robust_evaluation(model, X, y, N_Exp, CV, Scoring='balanced_accuracy'):
     for _ in range(N_Exp):
         cv_results = cross_val_score(model, X, y, cv=CV, scoring=Scoring, n_jobs=-1)
         scores.extend(cv_results)
+
 
     return np.mean(scores)

@@ -3,23 +3,23 @@ import numpy as np
 import RobustEvaluation as re
 
 
-def backward_sequential_search(data, target_name, model, N_EXP, cV):
+def backward_sequential_search(data, objective, model, N_EXP=5, cV=10):
   
     """
     Realiza búsqueda secuencial hacia atrás para encontrar el mejor subconjunto de variables.
 
     :param data: pd.DataFrame, Conjunto de datos con N variables predictoras y una variable respuesta.
-    :param target_name: str, Nombre de la variable respuesta.
+    :param objective: str, Nombre de la variable respuesta.
     :param model: sklearn model, Instancia del modelo de entrenamiento a usar.
-    :param N_Exp: int, Número de repeticiones del experimento por validación cruzada (default 1).
-    :param CV: int, Número de pliegues (folds) a considerar en la validación cruzada (default 3).
+    :param N_Exp: int, Número de repeticiones del experimento por validación cruzada (default 5).
+    :param CV: int, Número de pliegues (folds) a considerar en la validación cruzada (default 10).
     :return: pd.DataFrame, Tabla con las combinaciones obtenidas en cada iteración, su tamaño y su rendimiento.
     """
     # Inicialización
     variables = list(data.columns)
-    variables.remove(target_name)
+    variables.remove(objective)
     current_solution = variables.copy()
-    y = data[target_name]
+    y = data[objective]
     results = []
 
     # Ejecución
@@ -55,4 +55,4 @@ def backward_sequential_search(data, target_name, model, N_EXP, cV):
 
 
     # Devolver los resultados en formato de DataFrame
-    return pd.DataFrame(results.reverse())
+    return pd.DataFrame(results)

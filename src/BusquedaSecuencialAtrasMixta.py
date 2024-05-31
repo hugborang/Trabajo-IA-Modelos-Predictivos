@@ -2,52 +2,86 @@ import pandas as pd
 import numpy as np
 import RobustEvaluation as re
 
-
-def backward_sequential_mixed_search_(data, target_name, model, N_Exp, cV, M=10):
-    """
-    Realiza búsqueda secuencial hacia atrás para encontrar el mejor subconjunto de variables.
-
-    :param data: pd.DataFrame, Conjunto de datos con N variables predictoras y una variable respuesta.
-    :param target_name: str, Nombre de la variable respuesta.
-    :param model: sklearn model, Instancia del modelo de entrenamiento a usar.
-    :param N_Exp: int, Número de repeticiones del experimento por validación cruzada (default 1).
-    :param M: int, Umbral de iteraciones sin mejoras para la condición de parada (default 10).
-    :return: pd.DataFrame, Tabla con las combinaciones obtenidas en cada iteración, su tamaño y su rendimiento.
-    """
+def backward_sequential_mixed_search_(data, objective, model, N_Exp, cV, M):
+   
+   
+    x = list(data.columns)
+    x.remove(objective)
+    y = data[objective]
+    
     # Inicialización
-    variables = list(data.columns)
-    variables.remove(target_name)
-    current_solution = variables.copy()
-    y = data[target_name]
+    current_solution = x
+    Añadidos = []
+    Eliminados = []
     results = []
-    counter = 0
+    contador = 0
 
-    # Ejecución
-    while counter < M:
-        best_score = -np.inf
+
+    #Falta condicion de parada
+    while  len(Eliminados) != len(x) and contador < M:
+
+
+        if(len(Eliminados) == len(x)):
+            contador +=1
+
+        best_score1 = -np.inf
         worst_variable = None
 
-        # Eliminar la peor variable
-        for variable in current_solution:
-            temp_solution = current_solution.copy()
-            temp_solution.remove(variable)
-            X_temp = data[temp_solution]
+        for variable in x:
+            if variable not in Eliminados:
+                temp_solution = current_solution.copy()
+                temp_solution.remove(variable)
+                X_temp = data[temp_solution]
+                    
+                if X_temp.empty:  
+                    continue
 
-            score = re.cross_val_score(model, X_temp, y, N_Exp, cV)
+                score = re.robust_evaluation(model, X_temp, y, N_Exp, cV)
 
-            if score > best_score:
-                best_score = score
-                worst_variable = variable
+                if score > best_score1:
+                    best_temp_solution = current_solution
+                    worst_variable = variable
+                    best_score1 = score
 
-        if worst_variable is not None:
-            current_solution.remove(worst_variable)
-            results.insert(0, {
-                'variables': current_solution.copy(),
-                'size': len(current_solution),
-                'score': best_score
+
+        if worst_variable:
+            Añadidos.append(worst_variable)
+            Eliminados.append(worst_variable)
+            contador = 0
+
+
+        best_score2 = best_score1
+        best_variable = None
+
+
+        for variable in x:
+            if variable not in temp_solution and variable not in Añadidos:
+                temp_solution = current_solution.copy()
+                temp_solution.append(variable)
+                X_temp = data[temp_solution]
+                
+                if X_temp.empty:  
+                    continue
+
+                score = re.robust_evaluation(model, X_temp, y, N_Exp, cV)
+
+                #Como best_score2 = best_score1, se puede omitir la condicion score > best_score1
+                if score > best_score2:
+                    best_temp_solution = temp_solution
+                    best_variable = variable
+                    best_score2 = score
+
+        if best_variable:
+            contador = 0
+            Añadidos.append(best_variable)
+
+        results.insert(0, {
+                'variables': best_temp_solution.copy(),
+                'size': len(best_temp_solution),
+                'score': best_score2
             })
-            counter = 0
-        else:
-            counter += 1
-
+        
+        
     return pd.DataFrame(results)
+    
+

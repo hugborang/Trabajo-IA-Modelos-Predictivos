@@ -54,5 +54,7 @@ def backward_sequential_search(data, objective, model, N_EXP=5, cV=10):
         })
 
 
-    # Devolver los resultados en formato de DataFrame
+    # Devolver los resultados en formato de DataFrame+
     return pd.DataFrame(results)
+
+

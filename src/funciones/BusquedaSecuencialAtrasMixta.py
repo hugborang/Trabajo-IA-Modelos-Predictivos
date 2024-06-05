@@ -60,7 +60,7 @@ def backward_sequential_mixed_search(data, objective, model, N_exp, cV, M):
             counter = 0
 
         #Para evitar que se añada una variable que no mejora el modelo.
-        if(score != -np.inf):
+        if(best_score != -np.inf):
             results.append({
                     'variables': current_solution.copy(),
                     'size': len(current_solution),

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.6.5)  5 JUN 2024 19:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.6.5)  6 JUN 2024 11:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -204,14 +204,14 @@ File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 \Gin@req@height=\dimen173
 \Gin@req@width=\dimen174
 )
-
-! LaTeX Error: File `kbordermatrix.sty' not found.
-
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: sty)
-
-Enter file name: 
-(C:\Users\pee\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
+(C:\Users\pee\AppData\Local\Programs\MiKTeX\tex/generic/genmisc\kbordermatrix.s
+ty
+Package: kbordermatrix 2011/09/21 Bordered matrix with brackets
+\kbcolsep=\skip54
+\kbrowsep=\skip55
+\br@kwd=\skip56
+\k@bordht=\skip57
+) (C:\Users\pee\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen175
 \lightrulewidth=\dimen176
@@ -230,8 +230,7 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisruleclass=\count282
 \@lastruleclass=\count283
 \@thisrulewidth=\dimen187
-)
-(C:\Users\pee\AppData\Local\Programs\MiKTeX\tex/latex/cite\cite.sty
+) (C:\Users\pee\AppData\Local\Programs\MiKTeX\tex/latex/cite\cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
@@ -289,133 +288,18 @@ Underfull \hbox (badness 1430) in paragraph at lines 74--78
 s
  []
 
-
-! LaTeX Error: File `ejemplo' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.111   \includegraphics{ejemplo}
-                                 
-? 
 [1{C:/Users/pee/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/pee/
 AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
 
 
 ]
 
-! LaTeX Error: Environment pseudo undefined.
+LaTeX Warning: Reference `fig:ejemplo' on page 2 undefined on input line 204.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.221   \begin{pseudo}
-                      *
-? 
-! Undefined control sequence.
-l.222     \hd
-             {\fn{mergesort}}(V) \\*
-? 
-! Undefined control sequence.
-l.222     \hd{\fn
-                 {mergesort}}(V) \\*
-? 
-! Misplaced \omit.
-\multispan ->\omit 
-                   \@multispan 
-l.223 ...}{l}{\textbf{Entrada}: un vector \( V \)}
-                                                   \\*
-? 
-! Misplaced \span.
-\sp@n ->\span 
-              \omit \advance \@multicnt \m@ne 
-l.223 ...}{l}{\textbf{Entrada}: un vector \( V \)}
-                                                   \\*
-? 
-! Misplaced \omit.
-\sp@n ->\span \omit 
-                    \advance \@multicnt \m@ne 
-l.223 ...}{l}{\textbf{Entrada}: un vector \( V \)}
-                                                   \\*
-? 
-! Undefined control sequence.
-<argument> ...nextchar \ifcase \@chclass \@classz 
-                                                  \or \@classi \or \@classii...
-l.223 ...}{l}{\textbf{Entrada}: un vector \( V \)}
-                                                   \\*
-? 
-! Undefined control sequence.
-\@mkpream ...hclass }\ifcase \@lastchclass \@acol 
-                                                  \or \or \@preamerr \@ne \o...
-l.223 ...}{l}{\textbf{Entrada}: un vector \( V \)}
-                                                   \\*
-? 
-! Misplaced \omit.
-\multispan ->\omit 
-                   \@multispan 
-l.225       en orden}
-                      \\
-? 
-! Misplaced \span.
-\sp@n ->\span 
-              \omit \advance \@multicnt \m@ne 
-l.225       en orden}
-                      \\
-? 
-! Misplaced \omit.
-\sp@n ->\span \omit 
-                    \advance \@multicnt \m@ne 
-l.225       en orden}
-                      \\
-? 
-! Undefined control sequence.
-<argument> ...nextchar \ifcase \@chclass \@classz 
-                                                  \or \@classi \or \@classii...
-l.225       en orden}
-                      \\
-? 
-! Undefined control sequence.
-\@mkpream ...hclass }\ifcase \@lastchclass \@acol 
-                                                  \or \or \@preamerr \@ne \o...
-l.225       en orden}
-                      \\
-? 
-! Undefined control sequence.
-l.231     \( V_{1} \leftarrow \pr
-                                 {mergesort}(V_{1}) \) \\
-? 
-! Undefined control sequence.
-l.232     \( V_{2} \leftarrow \pr
-                                 {mergesort}(V_{2}) \) \\
-? 
-! Undefined control sequence.
-l.233     devolver \fn
-                      {mezcla}(V_{1}, V_{2})
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.233     devolver \fn{mezcla}(V_
-                                 {1}, V_{2})
-? 
 
-! LaTeX Error: \begin{figure} on input line 220 ended by \end{pseudo}.
+LaTeX Warning: Reference `pcd:búsqueda secuencial hacia atrás' on page 2 unde
+fined on input line 213.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.234   \end{pseudo}
-                    
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.234   \end{pseudo}
-                    
-? 
 
 ! LaTeX Error: Environment pseudo undefined.
 
@@ -423,113 +307,468 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.236   \begin{pseudo}
+l.215   \begin{pseudo}
                       *
 ? 
 ! Undefined control sequence.
-l.237     \hd
-             {\fn{mezcla}}(V_{1}, V_{2}) \\*
+l.216     \hd
+             {\fn{búsqueda hacia atrás con evaluación robusta}}(SolucionI...
+
 ? 
 ! Undefined control sequence.
-l.237     \hd{\fn
-                 {mezcla}}(V_{1}, V_{2}) \\*
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.237     \hd{\fn{mezcla}}(V_
-                             {1}, V_{2}) \\*
+l.216     \hd{\fn
+                 {búsqueda hacia atrás con evaluación robusta}}(SolucionI...
+
 ? 
 ! Misplaced \omit.
 \multispan ->\omit 
                    \@multispan 
-l.240     }
-            \\*
+l.217 ...ntrada}: un vector \( SolucionInicial \)}
+                                                   \\*
 ? 
 ! Misplaced \span.
 \sp@n ->\span 
               \omit \advance \@multicnt \m@ne 
-l.240     }
-            \\*
+l.217 ...ntrada}: un vector \( SolucionInicial \)}
+                                                   \\*
 ? 
 ! Misplaced \omit.
 \sp@n ->\span \omit 
                     \advance \@multicnt \m@ne 
-l.240     }
-            \\*
+l.217 ...ntrada}: un vector \( SolucionInicial \)}
+                                                   \\*
 ? 
 ! Undefined control sequence.
 <argument> ...nextchar \ifcase \@chclass \@classz 
                                                   \or \@classi \or \@classii...
-l.240     }
-            \\*
+l.217 ...ntrada}: un vector \( SolucionInicial \)}
+                                                   \\*
 ? 
 ! Undefined control sequence.
 \@mkpream ...hclass }\ifcase \@lastchclass \@acol 
                                                   \or \or \@preamerr \@ne \o...
-l.240     }
-            \\*
+l.217 ...ntrada}: un vector \( SolucionInicial \)}
+                                                   \\*
 ? 
 ! Misplaced \omit.
 \multispan ->\omit 
                    \@multispan 
-l.244     }
-            \\
+l.218 ... \) soluciones, su tamaño y rendimiento}
+                                                   \\
 ? 
 ! Misplaced \span.
 \sp@n ->\span 
               \omit \advance \@multicnt \m@ne 
-l.244     }
-            \\
+l.218 ... \) soluciones, su tamaño y rendimiento}
+                                                   \\
 ? 
 ! Misplaced \omit.
 \sp@n ->\span \omit 
                     \advance \@multicnt \m@ne 
-l.244     }
-            \\
+l.218 ... \) soluciones, su tamaño y rendimiento}
+                                                   \\
 ? 
 ! Undefined control sequence.
 <argument> ...nextchar \ifcase \@chclass \@classz 
                                                   \or \@classi \or \@classii...
-l.244     }
-            \\
+l.218 ... \) soluciones, su tamaño y rendimiento}
+                                                   \\
 ? 
 ! Undefined control sequence.
 \@mkpream ...hclass }\ifcase \@lastchclass \@acol 
                                                   \or \or \@preamerr \@ne \o...
-l.244     }
-            \\
+l.218 ... \) soluciones, su tamaño y rendimiento}
+                                                   \\
 ? 
 
-! LaTeX Error: Bad math environment delimiter.
+Underfull \hbox (badness 10000) in paragraph at lines 215--219
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 220--223
+
+ []
+
+! Undefined control sequence.
+l.224     \por
+               cada \( k \) \textnormal{ desde } \( K \) \textnormal{ hasta ...
+
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 224--227
+
+ []
+
+! Undefined control sequence.
+l.228         \por
+                   cada \( V \) \textnormal{ en } \( SolucionActual \) \text...
+
+? 
+! Undefined control sequence.
+l.230             \( Rendimiento \leftarrow \fn
+                                               {evaluacionRobusta}(SolucionT...
+
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--231
+
+ []
+
+! Undefined control sequence.
+l.232             \si
+                      \( Rendimiento > MejorRendimiento \) \textnormal{ ento...
+
+? 
+! Undefined control sequence.
+l.235         \fin
+                   \\-
+? 
+! Undefined control sequence.
+l.238         \( Tabla \leftarrow \fn
+                                     {agregarFila}(Tabla, MejorSolucionTempo...
+
+? 
+! Undefined control sequence.
+l.239     \fin
+               \\
+? 
+
+Overfull \hbox (240.65067pt too wide) in paragraph at lines 237--240
+\OML/cmm/m/it/10 Tabla \OMS/cmsy/m/n/10   []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 T
+abla; MejorSolucionTemporal; []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 MejorSolucionT
+emporal\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; MejorRendimiento\OT1/cmr/m/n/10 )$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 237--240
+
+ []
+
+! Undefined control sequence.
+l.241     \( Tabla \leftarrow \fn
+                                 {ordenarPorRendimiento}(Tabla) \) \\
+? 
+! Undefined control sequence.
+l.242     \( DataFrame \leftarrow \fn
+                                     {convertirADataFrame}(Tabla) \) \\
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 241--243
+
+ []
+
+! Undefined control sequence.
+l.244     \devolver
+                    \( DataFrame \) \\
+? 
+
+! LaTeX Error: \begin{figure} on input line 214 ended by \end{pseudo}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.245     si \(
-                V_{1} \) \textnormal{no tiene elementos} entonces \\+
-? 
-! Undefined control sequence.
-l.258     \( V \leftarrow \fn
-                             {mezcla}(V_{1}, V_{2}) \) \\
-? 
-
-! LaTeX Error: \begin{figure} on input line 220 ended by \end{pseudo}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.262   \end{pseudo}
+l.245   \end{pseudo}
                     
 ? 
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 2
-63.
-(C:\Users\pee\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-[2]
+
+Underfull \hbox (badness 10000) in paragraph at lines 244--246
+
+ []
+
+
+LaTeX Warning: Reference `fig:ejemplo' on page 2 undefined on input line 249.
+
+
+LaTeX Warning: Reference `pcd:búsqueda secuencial hacia atrás mixta' on page 
+2 undefined on input line 258.
+
+
+! LaTeX Error: Environment pseudo undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.260   \begin{pseudo}
+                      *
+? 
+! Undefined control sequence.
+l.261     \hd
+             {\fn{búsqueda hacia atrás con evaluación robusta}}(SolucionI...
+
+? 
+! Undefined control sequence.
+l.261     \hd{\fn
+                 {búsqueda hacia atrás con evaluación robusta}}(SolucionI...
+
+? 
+! Misplaced \omit.
+\multispan ->\omit 
+                   \@multispan 
+l.262 ...ntrada}: un vector \( SolucionInicial \)}
+                                                   \\*
+? 
+! Misplaced \span.
+\sp@n ->\span 
+              \omit \advance \@multicnt \m@ne 
+l.262 ...ntrada}: un vector \( SolucionInicial \)}
+                                                   \\*
+? 
+! Misplaced \omit.
+\sp@n ->\span \omit 
+                    \advance \@multicnt \m@ne 
+l.262 ...ntrada}: un vector \( SolucionInicial \)}
+                                                   \\*
+? 
+! Undefined control sequence.
+<argument> ...nextchar \ifcase \@chclass \@classz 
+                                                  \or \@classi \or \@classii...
+l.262 ...ntrada}: un vector \( SolucionInicial \)}
+                                                   \\*
+? 
+! Undefined control sequence.
+\@mkpream ...hclass }\ifcase \@lastchclass \@acol 
+                                                  \or \or \@preamerr \@ne \o...
+l.262 ...ntrada}: un vector \( SolucionInicial \)}
+                                                   \\*
+? 
+! Misplaced \omit.
+\multispan ->\omit 
+                   \@multispan 
+l.263 ... \) soluciones, su tamaño y rendimiento}
+                                                   \\
+? 
+! Misplaced \span.
+\sp@n ->\span 
+              \omit \advance \@multicnt \m@ne 
+l.263 ... \) soluciones, su tamaño y rendimiento}
+                                                   \\
+? 
+! Misplaced \omit.
+\sp@n ->\span \omit 
+                    \advance \@multicnt \m@ne 
+l.263 ... \) soluciones, su tamaño y rendimiento}
+                                                   \\
+? 
+! Undefined control sequence.
+<argument> ...nextchar \ifcase \@chclass \@classz 
+                                                  \or \@classi \or \@classii...
+l.263 ... \) soluciones, su tamaño y rendimiento}
+                                                   \\
+? 
+! Undefined control sequence.
+\@mkpream ...hclass }\ifcase \@lastchclass \@acol 
+                                                  \or \or \@preamerr \@ne \o...
+l.263 ... \) soluciones, su tamaño y rendimiento}
+                                                   \\
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--264
+
+ []
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 268.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.268     \( Añ
+                adidos \leftarrow \textnormal{vacía} \) \\
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 265--270
+
+ []
+
+! Undefined control sequence.
+l.271     \por
+               cada \( k \) \textnormal{ desde } \( K \) \textnormal{ hasta ...
+
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 271--274
+
+ []
+
+! Undefined control sequence.
+l.275         \por
+                   cada \( V \) \textnormal{ en } \( SolucionActual \) \text...
+
+? 
+! Undefined control sequence.
+l.277             \( Rendimiento \leftarrow \fn
+                                               {evaluacionRobusta}(SolucionT...
+
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--278
+
+ []
+
+! Undefined control sequence.
+l.279             \si
+                      \( Rendimiento > MejorRendimiento \) \textnormal{ ento...
+
+? 
+! Undefined control sequence.
+l.282         \fin
+                   \\-
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--284
+
+ []
+
+! Undefined control sequence.
+l.286         \por
+                   cada \( V \) \textnormal{ en } \( ConjuntoOriginal \) \te...
+
+? 
+! Undefined control sequence.
+l.287             \si
+                      \( V \textnormal{ no está en } SolucionActual \textno...
+
+? 
+
+LaTeX Warning: Command \~ invalid in math mode on input line 287.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.287 ...} SolucionActual \textnormal{ ni en } Añ
+                                                  adidos \) \textnormal{ ent...
+
+? 
+! Undefined control sequence.
+l.289 ...            \( Rendimiento \leftarrow \fn
+                                                  {evaluacionRobusta}(Soluci...
+
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 286--290
+
+ []
+
+! Undefined control sequence.
+l.291                 \si
+                          \( Rendimiento > MejorRendimiento \) \textnormal{ ...
+
+? 
+! Undefined control sequence.
+l.294             \fin
+                       \\-
+? 
+! Undefined control sequence.
+l.295         \fin
+                   \\-
+? 
+! Undefined control sequence.
+l.297         \si
+                  \( MejorRendimiento > MejorRendimientoPunto2 \) \textnorma...
+
+? 
+
+LaTeX Warning: Command \~ invalid in math mode on input line 299.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.299             \( Añ
+                        adidos \leftarrow \fn{agregar}(Añadidos, \textnorma...
+
+? 
+! Undefined control sequence.
+l.299             \( Añadidos \leftarrow \fn
+                                             {agregar}(Añadidos, \textnorma...
+
+? 
+
+LaTeX Warning: Command \~ invalid in math mode on input line 299.
+
+! Please use \mathaccent for accents in math mode.
+\add@accent ... \let \ignorespaces \relax \accent 
+                                                  #1 #2\egroup \ifmmode \els...
+l.299 ... \( Añadidos \leftarrow \fn{agregar}(Añ
+                                                  adidos, \textnormal{variab...
+
+? 
+! Undefined control sequence.
+l.301     \fin
+               \\
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 297--302
+[]$\OML/cmm/m/it/10 MejorRendimiento > MejorRendimientoPunto\OT1/cmr/m/n/10 2$
+ []
+
+
+Overfull \hbox (85.85777pt too wide) in paragraph at lines 297--302
+\OML/cmm/m/it/10 A[]adidos \OMS/cmsy/m/n/10   []\OT1/cmr/m/n/10 (\OML/cmm/m/it/
+10 A[]adidos; []MejorSolucionTemporal\OT1/cmr/m/n/10 )$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 297--302
+
+ []
+
+! Undefined control sequence.
+l.304         \( Tabla \leftarrow \fn
+                                     {agregarFila}(Tabla, MejorSolucionTempo...
+
+? 
+! Undefined control sequence.
+l.305     \fin
+               \\
+? 
+
+Overfull \hbox (240.65067pt too wide) in paragraph at lines 303--306
+\OML/cmm/m/it/10 Tabla \OMS/cmsy/m/n/10   []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 T
+abla; MejorSolucionTemporal; []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 MejorSolucionT
+emporal\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; MejorRendimiento\OT1/cmr/m/n/10 )$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 303--306
+
+ []
+
+! Undefined control sequence.
+l.307     \( Tabla \leftarrow \fn
+                                 {ordenarPorRendimiento}(Tabla) \) \\
+? 
+! Undefined control sequence.
+l.308     \( DataFrame \leftarrow \fn
+                                     {convertirADataFrame}(Tabla) \) \\
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 307--309
+
+ []
+
+! Undefined control sequence.
+l.310     \devolver
+                    \( DataFrame \) \\
+? 
+
+! LaTeX Error: \begin{figure} on input line 259 ended by \end{pseudo}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.311   \end{pseudo}
+                    
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 310--312
+
+ []
+
+[2] [3]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -541,34 +780,41 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[3] (Documeno cientifico.aux)
+[4
+
+] (Documeno cientifico.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 3101 strings out of 474486
- 52494 string characters out of 5744700
- 1952542 words of memory out of 5000000
- 25384 multiletter control sequences out of 15000+600000
- 592402 words of font info for 98 fonts, out of 8000000 for 9000
+ 3063 strings out of 474486
+ 52230 string characters out of 5744700
+ 1956542 words of memory out of 5000000
+ 25346 multiletter control sequences out of 15000+600000
+ 592994 words of font info for 97 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,8n,65p,237b,294s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,8n,65p,237b,274s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/pee/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
 mi10.pfb><C:/Users/pee/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
 s/cm/cmr10.pfb><C:/Users/pee/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmr7.pfb><C:/Users/pee/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/amsfonts/cm/cmsy10.pfb><C:/Users/pee/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmsy7.pfb><C:/Users/pee/AppData/Local/Programs/MiKTeX/fo
-nts/type1/urw/courier/ucrr8a.pfb><C:/Users/pee/AppData/Local/Programs/MiKTeX/fo
-nts/type1/urw/times/utmb8a.pfb><C:/Users/pee/AppData/Local/Programs/MiKTeX/font
-s/type1/urw/times/utmbi8a.pfb><C:/Users/pee/AppData/Local/Programs/MiKTeX/fonts
-/type1/urw/times/utmr8a.pfb><C:/Users/pee/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/urw/times/utmri8a.pfb>
-Output written on "Documeno cientifico.pdf" (3 pages, 127540 bytes).
+msfonts/cm/cmsy10.pfb><C:/Users/pee/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmsy7.pfb><C:/Users/pee/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/urw/times/utmb8a.pfb><C:/Users/pee/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/urw/times/utmbi8a.pfb><C:/Users/pee/AppData/Local/Programs/MiKTeX/fonts/type
+1/urw/times/utmr8a.pfb><C:/Users/pee/AppData/Local/Programs/MiKTeX/fonts/type1/
+urw/times/utmri8a.pfb>
+Output written on "Documeno cientifico.pdf" (4 pages, 120741 bytes).
 PDF statistics:
- 63 PDF objects out of 1000 (max. 8388607)
+ 56 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

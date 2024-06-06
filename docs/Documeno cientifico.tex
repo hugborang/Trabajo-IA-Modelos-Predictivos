@@ -201,63 +201,112 @@ Todo esto en el lenguaje de programación Python, utilizando las librerías de S
   \end{enumerate}
 
 Las figuras se deben mencionar en el texto, como la
-\figurename~\ref{fig:ejemplo}. También se pueden añadir ecuaciones, como la
-ecuación~\eqref{eq:ejemplo}.
+\figurename~\ref{fig:ejemplo}.
 
-\begin{equation}
-  \label{eq:ejemplo}
-  a + b = \gamma
-\end{equation}
-
-Un ejemplo de pseudocódigo se puede observar en la
-\figurename~\ref{pcd:mergesort}.
-
+\figurename~\ref{pcd:búsqueda secuencial hacia atrás}.
 \begin{figure}
   \begin{pseudo}*
-    \hd{\fn{mergesort}}(V) \\*
-    \multicolumn{2}{l}{\textbf{Entrada}: un vector \( V \)} \\*
-    \multicolumn{2}{l}{\textbf{Salida}: un vector con los elementos de \( V \)
-      en orden} \\
-    si \( V \) \textnormal{es unitario} entonces \\+
-    devolver \( V \) \\-
-    si no entonces \\+
-    \( V_{1} \leftarrow \textnormal{primera mitad de } V\) \\
-    \( V_{2} \leftarrow \textnormal{segunda mitad de } V\) \\
-    \( V_{1} \leftarrow \pr{mergesort}(V_{1}) \) \\
-    \( V_{2} \leftarrow \pr{mergesort}(V_{2}) \) \\
-    devolver \fn{mezcla}(V_{1}, V_{2})
+    \hd{\fn{búsqueda hacia atrás con evaluación robusta}}(SolucionInicial) \\*
+    \multicolumn{2}{l}{\textbf{Entrada}: DataFrame con todas las variables \( SolucionInicial \)} \\*
+    \multicolumn{2}{l}{\textbf{Entrada}: Nombre de la variable respuesta \( SolucionInicial \)} \\*
+    \multicolumn{2}{l}{\textbf{Entrada}: model, tipo de tarea \( SolucionInicial \)} \\*
+    \multicolumn{2}{l}{\textbf{Entrada}: Número de repeticiones del experimento por validación cruzada \( SolucionInicial \)} \\*
+    \multicolumn{2}{l}{\textbf{Entrada}: Número de pliegues a considerar por la validación cruzada \( SolucionInicial \)} \\*
+    
+    \multicolumn{2}{l}{\textbf{Salida}: una tabla con \( K \) soluciones, su tamaño y rendimiento} \\
+
+    \( K \leftarrow \textnormal{tamaño de } SolucionInicial \) \\
+    \( Tabla \leftarrow \textnormal{vacía} \) \\
+    \( PeorVariable \leftarrow \textnormal{vacía} \) \\
+
+    \por cada \( k \) \textnormal{ desde } \( K \) \textnormal{ hasta } \( 1 \) \textnormal{ hacer} \\+
+        \( MejorRendimiento \leftarrow -\infty \) \\
+        \( MejorSolucionTemporal \leftarrow \textnormal{vacía} \) \\
+
+        \por cada \( V \) \textnormal{ en } \( SolucionActual \) \textnormal{ hacer} \\+
+            \( SolucionTemporal \leftarrow SolucionActual - V \) \\
+            \( Rendimiento \leftarrow \fn{evaluacionRobusta}(SolucionTemporal) \) \\
+
+            \si \( Rendimiento > MejorRendimiento \) \textnormal{ entonces} \\+
+                \( MejorRendimiento \leftarrow Rendimiento \) \\
+                \( PeorVariable \leftarrow V \) \\-
+        \fin \\-
+
+        \( SolucionActual \leftarrow SolucionActual - PeorVariable \) \\
+        \( Tabla \leftarrow \fn{agregarFila}(Tabla, MejorSolucionTemporal, \textnormal{tamaño}(MejorSolucionTemporal), MejorRendimiento) \) \\-
+    \fin \\
+
+    \( Tabla \leftarrow \fn{ordenarPorRendimiento}(Tabla) \) \\
+    \( DataFrame \leftarrow \fn{convertirADataFrame}(Tabla) \) \\
+
+    \devolver \( DataFrame \) \\
   \end{pseudo}
-  
-  \begin{pseudo}*
-    \hd{\fn{mezcla}}(V_{1}, V_{2}) \\*
-    \multicolumn{2}{l}{%
-      \textbf{Entrada}: dos vectores \( V_{1} \) y \( V_{2} \) ordenados
-    } \\*
-    \multicolumn{2}{l}{%
-      \textbf{Salida}: un vector con los elementos de \( V_{1} \) y \( V_{2} \)
-      en orden
-    } \\
-    si \( V_{1} \) \textnormal{no tiene elementos} entonces \\+
-    devolver \( V_{2} \) \\-
-    si no si \( V_{2} \) \textnormal{no tiene elementos} entonces \\+
-    devolver \( V_{1} \) \\-
-    si no entonces \\+
-    \( x_{1} \leftarrow \textnormal{primer elemento de } V_{1} \) \\
-    \( x_{2} \leftarrow \textnormal{primer elemento de } V_{2} \) \\
-    si \( x_{1} \leq x_{2} \) entonces \\+
-    \( x \leftarrow x_{1} \) \\
-    \textnormal{quitar el primer elemento de} \( V_{1} \) \\-
-    si no entonces \\+
-    \( x \leftarrow x_{2} \) \\
-    \textnormal{quitar el primer elemento de} \( V_{2} \) \\-
-    \( V \leftarrow \fn{mezcla}(V_{1}, V_{2}) \) \\
-    \textnormal{añadir} \( x \)
-    \textnormal{como primer elemento de} \( V \) \\
-    devolver \( V \)
-  \end{pseudo}
-  \caption{Algoritmo de ordenación \texttt{MergeSort}}
-  \label{pcd:mergesort}
 \end{figure}
+
+\figurename~\ref{fig:ejemplo}.
+\figurename~\ref{pcd:búsqueda secuencial hacia atrás mixta}.
+\begin{figure}
+  \begin{pseudo}*
+    \hd{\fn{búsqueda hacia atrás mixta}}(SolucionInicial) \\*
+    \multicolumn{2}{l}{\textbf{Entrada}: DataFrame con todas las variables \( SolucionInicial \)} \\*
+    \multicolumn{2}{l}{\textbf{Entrada}: Nombre de la variable respuesta \( SolucionInicial \)} \\*
+    \multicolumn{2}{l}{\textbf{Entrada}: model, tipo de tarea \( SolucionInicial \)} \\*
+    \multicolumn{2}{l}{\textbf{Entrada}: Número de repeticiones del experimento por validación cruzada \( SolucionInicial \)} \\*
+    \multicolumn{2}{l}{\textbf{Entrada}: Número de pliegues a considerar por la validación cruzada \( SolucionInicial \)} \\*
+    \multicolumn{2}{l}{\textbf{Entrada}: Número de iteraciones una vez se hayan eliminado todas las variables predictoras, y además no se añade ninguna variable predictora \( SolucionInicial \)} \\
+    
+    \multicolumn{2}{l}{\textbf{Salida}: una tabla con \( K \) soluciones, su tamaño y rendimiento} \\
+
+    \( K \leftarrow \textnormal{tamaño de } SolucionInicial \) \\
+    \( Solucion \leftarrow \textnormal{vacía} \) \\
+    \( Eliminados \leftarrow \textnormal{vacía} \) \\
+    \( Añadidos \leftarrow \textnormal{vacía} \) \\
+    \( PeorVariable \leftarrow \textnormal{vacía} \) \\
+
+    \por cada \( k \) \textnormal{ desde } \( K \) \textnormal{ hasta } \( 1 \) \textnormal{ hacer} \\+
+        \( MejorRendimiento \leftarrow -\infty \) \\
+        \( MejorSolucionTemporal \leftarrow \textnormal{vacía} \) \\
+
+        \por cada \( V \) \textnormal{ en } \( SolucionActual \) \textnormal{ hacer} \\+
+            \( SolucionTemporal \leftarrow SolucionActual - V \) \\
+            \( Rendimiento \leftarrow \fn{evaluacionRobusta}(SolucionTemporal) \) \\
+
+            \si \( Rendimiento > MejorRendimiento \) \textnormal{ entonces} \\+
+                \( MejorRendimiento \leftarrow Rendimiento \) \\
+                \( PeorVariable \leftarrow V \) \\-
+        \fin \\-
+        \( Eliminados \leftarrow Eliminados + PeorVariable \) \\
+
+
+        \por cada \( V \) \textnormal{ en } \( ConjuntoOriginal \) \textnormal{ hacer} \\+
+            \si \( V \textnormal{ no está en } SolucionActual \textnormal{ ni en } Añadidos \) \textnormal{ entonces} \\+
+                \( SolucionTemporal \leftarrow SolucionActual + V \) \\
+                \( Rendimiento \leftarrow \fn{evaluacionRobusta}(SolucionTemporal) \) \\
+
+                \si \( Rendimiento > MejorRendimiento \) \textnormal{ entonces} \\+
+                    \( MejorRendimiento \leftarrow Rendimiento \) \\
+                    \( MejorSolucionTemporal \leftarrow SolucionTemporal \) \\-
+            \fin \\-
+        \fin \\-
+
+        \si \( MejorRendimiento > MejorRendimientoPunto2 \) \textnormal{ entonces} \\+
+            \( SolucionActual \leftarrow MejorSolucionTemporal \) \\
+            \( Añadidos \leftarrow \fn{agregar}(Añadidos, \textnormal{variable añadida a } MejorSolucionTemporal) \) \\
+            \( MejorRendimientoPunto2 \leftarrow MejorRendimiento \) \\-
+    \fin \\
+
+        \( SolucionActual \leftarrow SolucionActual - PeorVariable \) \\
+        \( Tabla \leftarrow \fn{agregarFila}(Tabla, MejorSolucionTemporal, \textnormal{tamaño}(MejorSolucionTemporal), MejorRendimiento) \) \\-
+    \fin \\
+
+    \( Tabla \leftarrow \fn{ordenarPorRendimiento}(Tabla) \) \\
+    \( DataFrame \leftarrow \fn{convertirADataFrame}(Tabla) \) \\
+
+    \devolver \( DataFrame \) \\
+  \end{pseudo}
+\end{figure}
+
+
 
 \section{Resultados}
 

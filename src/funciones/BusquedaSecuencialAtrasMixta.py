@@ -4,6 +4,20 @@ import funciones.RobustEvaluation as re
 
 def backward_sequential_mixed_search(data, objective, model, N_exp, cV, M):
    
+      
+    """
+    Realiza búsqueda secuencial hacia atrás para encontrar el mejor subconjunto de variables.
+
+    :param data: pd.DataFrame, Conjunto de datos con N variables predictoras y una variable respuesta.
+    :param objective: str, Nombre de la variable respuesta.
+    :param model: RandomForestClassifier
+    :param N_Exp: int, Número de repeticiones del experimento por validación cruzada (default 5).
+    :param CV: int, Número de pliegues (folds) a considerar en la validación cruzada (default 10).
+    :param M: int, Número máximo de iteraciones sin mejora.
+    :return: pd.DataFrame, Tabla con las combinaciones obtenidas en cada iteración, su tamaño y su rendimiento.
+    """
+
+
     variables = list(data.columns)
     variables.remove(objective)
     y = data[objective]

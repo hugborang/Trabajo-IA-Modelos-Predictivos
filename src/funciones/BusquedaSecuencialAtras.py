@@ -3,7 +3,7 @@ import numpy as np
 import funciones.RobustEvaluation as re
 
 
-def backward_sequential_search(data, objective, model, N_EXP=5, cV=10):
+def backward_sequential_search(data, objective, model, N_exp=5, cV=10):
   
     """
     Realiza búsqueda secuencial hacia atrás para encontrar el mejor subconjunto de variables.
@@ -30,10 +30,10 @@ def backward_sequential_search(data, objective, model, N_EXP=5, cV=10):
             temp_solution.remove(v)
             X_temp = data[temp_solution]
 
-            if X_temp.empty:  # Asegurarse de que el DataFrame no esté vacío
+            if X_temp.empty:   # Asegurarse de que el DataFrame no esté vacío
                 continue
             
-            score = re.robust_evaluation(X_temp, y, model,  N_EXP, cV)
+            score = re.robust_evaluation(X_temp, y, model,  N_exp, cV)
 
             if score > best_score:
                 best_score = score
@@ -50,12 +50,12 @@ def backward_sequential_search(data, objective, model, N_EXP=5, cV=10):
             'score': best_score
         })
 
-    all_variablesScores = re.robust_evaluation(data[variables], y, model, N_EXP, cV)
+    all_variables_scores = re.robust_evaluation(data[variables], y, model, N_exp, cV)
 
     results.insert(-1, {
         'variables': variables,
         'size': len(variables),
-        'score': all_variablesScores
+        'score': all_variables_scores
     })
     
     sorted_results = pd.DataFrame(results)

@@ -4,7 +4,6 @@ import funciones.RobustEvaluation as re
 
 def backward_sequential_mixed_search(data, objective, model, N_exp, cV, M):
    
-      
     """
     Realiza búsqueda secuencial hacia atrás para encontrar el mejor subconjunto de variables.
 
@@ -16,7 +15,6 @@ def backward_sequential_mixed_search(data, objective, model, N_exp, cV, M):
     :param M: int, Número máximo de iteraciones sin mejora.
     :return: pd.DataFrame, Tabla con las combinaciones obtenidas en cada iteración, su tamaño y su rendimiento.
     """
-
 
     variables = list(data.columns)
     variables.remove(objective)
@@ -31,8 +29,10 @@ def backward_sequential_mixed_search(data, objective, model, N_exp, cV, M):
 
     while  len(deleted) != len(variables) or counter < M:
         
+        # Si se eliminan todas las variables, empieza a contar las iteraciones sin mejora
+
         if(len(deleted) == len(variables)):
-            counter +=1
+            counter +=1  
        
         best_score = -np.inf
         worst_variable = None
@@ -43,7 +43,7 @@ def backward_sequential_mixed_search(data, objective, model, N_exp, cV, M):
                 temp_solution.remove(v)
                 X_temp = data[temp_solution]
 
-                score = re.robust_evaluation(X_temp, y, model, N_exp, cV)
+                score = re.robust_evaluation(X_temp, y, model, N_exp, cV)  # Calcular rendimiento usando la funcion robust_evaluation
 
                 if score > best_score:
                     worst_variable = v
@@ -63,6 +63,8 @@ def backward_sequential_mixed_search(data, objective, model, N_exp, cV, M):
                 X_temp = data[temp_solution]
                 
                 score = re.robust_evaluation(X_temp, y, model,  N_exp, cV)
+
+                # Si se mejora el redimiento ya calculado, se añade la variable
 
                 if score > best_score:
                     best_variable = v

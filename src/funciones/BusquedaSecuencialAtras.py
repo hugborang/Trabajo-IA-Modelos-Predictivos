@@ -10,11 +10,12 @@ def backward_sequential_search(data, objective, model, N_exp=5, cV=10):
 
     :param data: pd.DataFrame, Conjunto de datos con N variables predictoras y una variable respuesta.
     :param objective: str, Nombre de la variable respuesta.
-    :param model: RandomForestClassifier
+    :param model: En este caso vamos a usar RandomForestClassifier
     :param N_Exp: int, Número de repeticiones del experimento por validación cruzada (default 5).
     :param CV: int, Número de pliegues (folds) a considerar en la validación cruzada (default 10).
     :return: pd.DataFrame, Tabla con las combinaciones obtenidas en cada iteración, su tamaño y su rendimiento.
     """
+
     variables = list(data.columns)
     variables.remove(objective)
     current_solution = variables.copy()
@@ -50,7 +51,7 @@ def backward_sequential_search(data, objective, model, N_exp=5, cV=10):
             'score': best_score
         })
 
-    all_variables_scores = re.robust_evaluation(data[variables], y, model, N_exp, cV)
+    all_variables_scores = re.robust_evaluation(data[variables], y, model, N_exp, cV) # Calcular rendimiento con todas las variables
 
     results.insert(-1, {
         'variables': variables,

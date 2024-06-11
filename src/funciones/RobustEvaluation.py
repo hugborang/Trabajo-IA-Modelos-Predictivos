@@ -9,7 +9,7 @@ def robust_evaluation(X, y, model, N_Exp, CV):
 
     :param X: pd.DataFrame, Conjunto de datos con variables predictoras.
     :param y: pd.Series, Variable respuesta.
-    :param model: RandomForestClassifier
+    :param model: En este caso vamos a usar RandomForestClassifier
     :param N_Exp: int, Número de repeticiones del experimento.
     :param CV: int, Número de pliegues (folds) para la validación cruzada.
     :return: float, Métrica de rendimiento promedio obtenida.
@@ -17,6 +17,7 @@ def robust_evaluation(X, y, model, N_Exp, CV):
     scores = []
 
     #Usamos balanced_accuracy como métrica de rendimiento y usamos todos los núcleos disponibles
+    
     for _ in range(N_Exp):
         cv_results = cross_val_score(model, X, y, cv=CV, scoring='balanced_accuracy', n_jobs=-1)
         scores.extend(cv_results)
